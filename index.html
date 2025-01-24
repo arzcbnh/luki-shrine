@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Em memória de Luki</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="banner">
+      <div class="in-memoriam">Em memória de</div>
+      <div class="shrine"><img
+              class="portrait"
+        src="assets/photos/IMG_20191118_213232.jpg"
+        alt=""
+      />
+        <img class="butterfly" src="assets/butterfly.gif" alt="">
+        <img class="flowers" src="assets/flowers.webp" alt="" >
+        <img class="candle" src="assets/candle.gif" alt=""/>
+        <img class="crying-cat" src="assets/crying-cat.webp" alt="">
+      </div>
+      <div class="name">Luki</div>
+      <div class="lifespan">2011-2025</div>
+    </div>
+
+    <div class="epitaph">
+      <p>Meu querido Luki,</p>
+      <p>
+        Em momentos que eu senti não ter ninguém, você esteve comigo. Acho que
+        não te dei tudo que você merecia. Eram necessários mais passeios, mais
+        petiscos, mais carinho, e mais tempo juntos. Mas mesmo que eu tivesse
+        tentando te dar essas coisas, não teria conseguido te dar tudo - pois o
+        amor que você merecia era infinito.
+      </p>
+    </div>
+
+    <div class="carrousel">
+      <img src="assets/photos/1622763131636.jpg" alt=""/>
+      <img src="assets/photos/Snapchat-2103822635.jpg" alt=""/>
+      <img src="assets/photos/IMG-20200624-WA0000.jpg" alt=""/>
+      <video src="assets/photos/Snapchat-395936246.mp4" autoplay muted loop></video>
+      <img src="assets/photos/IMG-20200618-WA0021.jpg" alt=""/>
+      <img src="assets/photos/IMG_20191125_134625.jpg" alt=""/>
+      <img src="assets/photos/Twitter_20190506_181445.jpg" alt=""/>
+      <img src="assets/photos/IMG_20200108_081920.jpg" alt=""/>
+      <video src="assets/photos/Snapchat-992569198.mp4" autoplay muted loop></video>
+      <img src="assets/photos/IMG_ryvsor.jpg" alt=""/>
+      <img src="assets/photos/DSC01402.jpg" alt=""/>
+      <img src="assets/photos/Snapchat-1779474308.jpg" alt=""/>
+      <img src="assets/photos/Snapchat-948437042.jpg" alt=""/>
+      <img src="assets/photos/Snapchat-1994548659.jpg" alt=""/>
+      <video src="assets/photos/Snapchat-653187470.mp4" autoplay muted loop></video>
+    </div>
+
+    <script>
+      let carrousel = document.querySelector(".carrousel");
+      let interval = setInterval(() => carrousel.scrollLeft += 10, 100);
+
+      function resetScroll() {
+        if (carrousel.scrollLeft + carrousel.clientWidth < carrousel.scrollWidth)
+          return;
+
+        clearInterval(interval);
+        setTimeout(() => carrousel.scrollLeft = 0, 3000);
+        setTimeout(() => interval = setInterval(() => carrousel.scrollLeft += 10, 100), 4500);
+      }
+
+      function stopScrolling() {
+        carrousel.removeEventListener("scrollend", resetScroll);
+        clearInterval(interval);
+      }
+
+      carrousel.addEventListener("scrollend", resetScroll);
+      carrousel.addEventListener("mousemove", stopScrolling);
+      carrousel.addEventListener("touchstart", stopScrolling);
+    </script>
+  </body>
+</html>

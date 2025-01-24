@@ -1,0 +1,106 @@
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  background: linear-gradient(white, lightpink);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: serif;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.shrine {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.portrait {
+  width: 100%;
+  max-width: 300px;
+  border-width: 28px;
+  border-style: solid;
+  border-image: url("assets/frame.gif") 28 / 1 stretch;
+}
+
+@media (max-width: 900px) {
+  .shrine {
+    margin: -17%;
+    transform: scale(70%);
+  }
+}
+
+.butterfly {
+  filter: hue-rotate(180deg) brightness(1.5);
+  transform: scaleX(-1);
+  position: absolute;
+  right: -40px;
+  top: -40px;
+}
+
+.flowers {
+  width: 120%;
+  position: absolute;
+  bottom: -40px;
+  left: -10%;
+}
+
+.candle {
+  height: 66%;
+  position: absolute;
+  bottom: -15px;
+  right: -70px;
+}
+
+.crying-cat {
+  width: 150px;
+  position: absolute;
+  bottom: -30px;
+  left: -95px;
+}
+
+.in-memoriam {
+  margin-bottom: 15px;
+}
+
+.in-memoriam, .name, .lifespan {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.lifespan {
+  font-size: 1.33rem;
+}
+
+.epitaph {
+  max-width: 500px;
+  padding: 2rem;
+
+  font-weight: bold;
+
+  background: url("assets/parchment.png");
+  background-size: 100% 100%;
+}
+
+.carrousel {
+  width: 100vw;
+  height: 300px;
+  margin-top: 1rem;
+  overflow: scroll;
+  display: flex;
+  gap: 0.5rem;
+  scroll-behavior: smooth;
+
+  * {
+    height: 100%;
+  }
+}
